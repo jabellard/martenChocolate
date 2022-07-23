@@ -11,10 +11,10 @@ var martenConfigurator = builder.Services.AddMarten(_ =>
     return options;
 });
 martenConfigurator.InitializeWith<DatabaseSeed>();
-
 builder.Services
     .AddGraphQLServer()
     .AddQueryType<Query>()
+    .AddSorting()
     .AddFiltering();
 
 var app = builder.Build();
